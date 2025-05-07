@@ -6,31 +6,16 @@ function formatString(input: string, toUpper?: boolean): string{
     }
 }
 
-// const result = formatString("ratul");
-// console.log(result);
-
 
 function filterByRating(items: { title: string; rating: number }[]): { title: string; rating: number }[]{
     return items.filter(item => item.rating >= 4);
 }
 
-// const books = [
-//     {title: "book 0", rating: 5},
-//     {title: "book 9", rating: 1},
-//     {title: "book 8", rating: 2},
-//     {title: "book 7", rating: 4},
-//     {title: "book 6", rating: 3.4},
-// ]
-
-// const booksResult = filterByRating(books);
-// console.log(booksResult);
 
 function concatenateArrays<T>(...arrays: T[][]): T[] {
     return arrays.reduce((a, c) => a.concat(c), []);
 }
 
-// const result = concatenateArrays(["1", "2", "3"], ["4", "5"])
-// console.log(result);
 
 class Vehicle {
     private _make: string;
@@ -59,9 +44,6 @@ class Car extends Vehicle {
     }
 }
 
-// const myCar = new Car("BMW", 2010, "series-five")
-// console.log(myCar.getInfo());
-// console.log(myCar.getModel());
 
 function processValue(value: string | number): number{
     if (typeof value === "string") {
@@ -71,9 +53,6 @@ function processValue(value: string | number): number{
     }
 }
 
-
-// console.log(processValue("ratul"));
-// console.log(processValue(83));
 
 interface Product {
     name: string;
@@ -87,14 +66,6 @@ function getMostExpensiveProduct(products: Product[]): Product | null{
     current.price > max.price ? current : max)
 }
 
-// const products = [
-//     {name: "food", price: 34},
-//     {name: "tea", price: 343},
-//     {name: "egg", price: 43},
-// ]
-
-// const expensiveProduct = getMostExpensiveProduct(products);
-// console.log(expensiveProduct);
 
 enum Day {
   Monday,
@@ -110,9 +81,6 @@ function getDayType(day: Day): string {
     return day === Day.Saturday || day === Day.Sunday ? "Weekend" : "WeekDay";
 }
 
-// const sunday = getDayType(Day.Sunday);
-// console.log(sunday);
-
 async function squareAsync(n: number): Promise<number>{
     return new Promise((resolve, reject) => {
         setTimeout(() => {
@@ -124,6 +92,3 @@ async function squareAsync(n: number): Promise<number>{
         }, 1000);
     });
 }
-
-// squareAsync(43).then(console.log);
-// squareAsync(-31).catch(console.error);
